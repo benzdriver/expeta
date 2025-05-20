@@ -1,0 +1,47 @@
+{
+  "module": "FormRepository",
+  "description": "Service for managing form data and operations",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [
+      "FormService"
+    ],
+    "repositories": [
+      "FormRepository"
+    ],
+    "dtos": {
+      "FormDto": {
+        "fields": []
+      }
+    },
+    "api": [
+      {
+        "method": "GET",
+        "route": "/forms",
+        "input": "FormDto",
+        "output": "FormDto"
+      }
+    ],
+    "database": {
+      "tables": [
+        "forms"
+      ],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

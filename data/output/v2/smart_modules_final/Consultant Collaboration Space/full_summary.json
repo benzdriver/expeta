@@ -1,0 +1,30 @@
+{
+  "module": "Consultant Collaboration Space",
+  "description": "A module for facilitating collaboration among consultants.",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [],
+    "repositories": [],
+    "dtos": {},
+    "api": [],
+    "database": {
+      "tables": [],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

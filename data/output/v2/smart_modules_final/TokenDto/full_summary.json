@@ -1,0 +1,34 @@
+{
+  "module": "JWT Authentication",
+  "description": "Handles JSON Web Token based authentication",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [],
+    "repositories": [],
+    "dtos": {
+      "TokenDto": {
+        "fields": []
+      }
+    },
+    "api": [],
+    "database": {
+      "tables": [],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

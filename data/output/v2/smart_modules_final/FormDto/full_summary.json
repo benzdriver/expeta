@@ -1,0 +1,34 @@
+{
+  "module": "FormRepository",
+  "description": "Handles form data transfer objects and related operations",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [],
+    "repositories": [],
+    "dtos": {
+      "FormDto": {
+        "fields": []
+      }
+    },
+    "api": [],
+    "database": {
+      "tables": [],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

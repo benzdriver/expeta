@@ -1,0 +1,30 @@
+{
+  "module": "Application Follow-up Guidance",
+  "description": "Provides guidance for following up on applications",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [],
+    "repositories": [],
+    "dtos": {},
+    "api": [],
+    "database": {
+      "tables": [],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

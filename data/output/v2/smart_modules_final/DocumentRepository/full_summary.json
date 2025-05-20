@@ -1,0 +1,61 @@
+{
+  "module": "DocumentRepository",
+  "description": "Service for managing document storage and retrieval",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [
+      "DocumentService"
+    ],
+    "repositories": [
+      "DocumentRepository"
+    ],
+    "dtos": {
+      "DocumentDto": {
+        "fields": [
+          "id",
+          "title",
+          "content",
+          "createdAt",
+          "updatedAt"
+        ]
+      }
+    },
+    "api": [
+      {
+        "method": "GET",
+        "route": "/documents",
+        "input": null,
+        "output": "DocumentDto[]"
+      },
+      {
+        "method": "POST",
+        "route": "/documents",
+        "input": "DocumentDto",
+        "output": "DocumentDto"
+      }
+    ],
+    "database": {
+      "tables": [
+        "Documents"
+      ],
+      "indexes": [
+        "CREATE INDEX idx_documents_title ON Documents(title)"
+      ]
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

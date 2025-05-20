@@ -1,0 +1,34 @@
+{
+  "module": "JWT Authentication",
+  "description": "Handles user authentication using JWT.",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [],
+    "repositories": [],
+    "dtos": {
+      "AuthDto": {
+        "fields": []
+      }
+    },
+    "api": [],
+    "database": {
+      "tables": [],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

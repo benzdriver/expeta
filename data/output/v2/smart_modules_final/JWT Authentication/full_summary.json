@@ -1,0 +1,73 @@
+{
+  "module": "JWT Authentication",
+  "description": "Service for handling JWT based authentication",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [
+      "AuthController"
+    ],
+    "services": [
+      "AuthService"
+    ],
+    "repositories": [
+      "UserRepository"
+    ],
+    "dtos": {
+      "AuthDto": {
+        "fields": [
+          "username",
+          "password"
+        ]
+      },
+      "TokenDto": {
+        "fields": [
+          "accessToken",
+          "refreshToken"
+        ]
+      }
+    },
+    "api": [
+      {
+        "method": "POST",
+        "route": "/auth/login",
+        "input": "AuthDto",
+        "output": "TokenDto"
+      },
+      {
+        "method": "POST",
+        "route": "/auth/refresh",
+        "input": "TokenDto",
+        "output": "TokenDto"
+      }
+    ],
+    "database": {
+      "tables": [
+        "users",
+        "tokens"
+      ],
+      "indexes": [
+        "users_email_index",
+        "tokens_user_id_index"
+      ]
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [
+      "authService.test.js",
+      "authController.test.js"
+    ],
+    "e2e": [
+      "authFlow.e2e.js"
+    ]
+  }
+}

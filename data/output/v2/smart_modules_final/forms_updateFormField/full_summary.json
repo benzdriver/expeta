@@ -1,0 +1,41 @@
+{
+  "module": "forms/updateFormField",
+  "description": "API endpoint for updating a form field",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [],
+    "repositories": [],
+    "dtos": {
+      "DtoName": {
+        "fields": []
+      }
+    },
+    "api": [
+      {
+        "method": "PUT",
+        "route": "/api/forms/updateFormField",
+        "input": "UpdateFormFieldDto",
+        "output": "FormFieldResponseDto"
+      }
+    ],
+    "database": {
+      "tables": [],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

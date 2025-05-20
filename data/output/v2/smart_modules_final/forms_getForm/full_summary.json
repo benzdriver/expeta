@@ -1,0 +1,41 @@
+{
+  "module": "forms/getForm",
+  "description": "API endpoint to retrieve form data",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [],
+    "repositories": [],
+    "dtos": {
+      "DtoName": {
+        "fields": []
+      }
+    },
+    "api": [
+      {
+        "method": "GET",
+        "route": "/api/forms/getForm",
+        "input": null,
+        "output": "FormDto"
+      }
+    ],
+    "database": {
+      "tables": [],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}

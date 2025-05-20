@@ -1,0 +1,47 @@
+{
+  "module": "WorkspaceRepository",
+  "description": "Service for managing workspace data and operations",
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "apiHooks": [],
+    "routes": []
+  },
+  "backend": {
+    "controllers": [],
+    "services": [
+      "WorkspaceService"
+    ],
+    "repositories": [
+      "WorkspaceRepository"
+    ],
+    "dtos": {
+      "WorkspaceDto": {
+        "fields": []
+      }
+    },
+    "api": [
+      {
+        "method": "GET",
+        "route": "/workspaces",
+        "input": "WorkspaceDto",
+        "output": "WorkspaceDto"
+      }
+    ],
+    "database": {
+      "tables": [
+        "workspaces"
+      ],
+      "indexes": []
+    }
+  },
+  "dependencies": [],
+  "events": {
+    "emit": [],
+    "listen": []
+  },
+  "test": {
+    "unit": [],
+    "e2e": []
+  }
+}
