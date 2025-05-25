@@ -1,3 +1,4 @@
+from common import print_log
 """
 JSON处理工具模块，提供JSON提取和验证功能
 """
@@ -25,7 +26,7 @@ def extract_json_from_response(response: str) -> Dict[str, Any]:
                     cleaned_json = match.strip()
                     return json.loads(cleaned_json)
                 except json.JSONDecodeError:
-                    print(f"⚠️ JSON解析错误，尝试清理JSON文本")
+                    print_log(f"JSON解析错误，尝试清理JSON文本", level="warning")
                     try:
                         no_comments = re.sub(r'^\s*//.*$', '', cleaned_json, flags=re.MULTILINE)
                         fixed_commas = re.sub(r',\s*}', '}', no_comments)
@@ -59,6 +60,6 @@ def parse_and_update_global_state(response: str, global_state: Dict[str, Any]) -
             if "architecture_pattern" in data:
                 global_state["architecture_pattern"] = data["architecture_pattern"]
     except Exception as e:
-        print(f"Error parsing JSON from response: {e}")
+        print_log(f"Error parsing JSON from response: {e}")
     
     return global_state

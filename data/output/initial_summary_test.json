@@ -1,0 +1,104 @@
+{
+  "module": "UserModule",
+  "description": "Handles user-related functionalities including authentication, profile management, and role-based access control.",
+  "frontend": {
+    "pages": [
+      "/login",
+      "/register",
+      "/profile",
+      "/dashboard"
+    ],
+    "components": [
+      "LoginForm",
+      "RegistrationForm",
+      "UserProfile",
+      "UserDashboard"
+    ],
+    "apiHooks": [
+      "useUser",
+      "useAuth",
+      "useProfile"
+    ],
+    "routes": [
+      {
+        "path": "/login",
+        "component": "LoginForm"
+      },
+      {
+        "path": "/register",
+        "component": "RegistrationForm"
+      },
+      {
+        "path": "/profile",
+        "component": "UserProfile"
+      },
+      {
+        "path": "/dashboard",
+        "component": "UserDashboard"
+      }
+    ]
+  },
+  "backend": {
+    "controllers": [
+      "UserController",
+      "AuthController"
+    ],
+    "services": [
+      "UserService",
+      "AuthService"
+    ],
+    "repositories": [
+      "UserRepository"
+    ],
+    "dtos": {
+      "UserDto": {
+        "fields": [
+          "id: string",
+          "name: string",
+          "email: string",
+          "role: string"
+        ]
+      }
+    },
+    "api": [
+      "/api/users",
+      "/api/auth/login",
+      "/api/auth/register",
+      "/api/users/profile"
+    ],
+    "database": {
+      "tables": [
+        "users",
+        "roles"
+      ],
+      "indexes": [
+        "email_index",
+        "role_index"
+      ]
+    }
+  },
+  "dependencies": [
+    "OpenAI API",
+    "MongoDB Atlas",
+    "Cloud storage"
+  ],
+  "events": {
+    "emit": [
+      "UserRegistered",
+      "UserLoggedIn"
+    ],
+    "listen": [
+      "UserProfileUpdated",
+      "UserRoleChanged"
+    ]
+  },
+  "test": {
+    "unit": [
+      "UserService.test.js",
+      "AuthService.test.js"
+    ],
+    "e2e": [
+      "UserFlow.test.js"
+    ]
+  }
+}

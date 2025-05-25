@@ -1,0 +1,118 @@
+{
+  "systemOverview": {
+    "type": "Web平台",
+    "domain": "移民咨询与服务",
+    "scale": "中等规模，支持多用户并发和多种服务集成",
+    "users": [
+      "移民申请者",
+      "移民顾问",
+      "系统管理员"
+    ]
+  },
+  "architectureDecisions": {
+    "style": "微服务架构",
+    "justification": "微服务架构能够很好地支持系统的可扩展性和高可用性需求，同时允许不同服务独立部署和扩展，适合中等规模的系统和复杂度。",
+    "frontendStack": [
+      "React",
+      "Next.js"
+    ],
+    "backendStack": [
+      "Node.js",
+      "Express"
+    ],
+    "dataStorage": [
+      "MongoDB",
+      "Amazon S3"
+    ]
+  },
+  "constraints": {
+    "namingConventions": {
+      "files": "使用小写字母和连字符，例：user-management.js",
+      "classes": "使用帕斯卡命名法，例：UserManager",
+      "methods": "使用驼峰命名法，例：getUserData",
+      "variables": "使用驼峰命名法，例：userName",
+      "constants": "使用全大写字母和下划线，例：MAX_CONNECTIONS",
+      "database": "表名使用复数形式，例：users；字段名使用小写字母和下划线，例：first_name",
+      "examples": [
+        "user-management.js",
+        "UserManager",
+        "getUserData",
+        "userName",
+        "MAX_CONNECTIONS",
+        "users",
+        "first_name"
+      ]
+    },
+    "codeOrganization": {
+      "directoryStructure": "按功能模块组织，例：/src/modules/user-management",
+      "fileStructure": "每个文件只包含一个类或模块，例：UserManager.js",
+      "modulePatterns": "使用单一职责原则，每个模块只负责一个功能",
+      "importRules": "优先使用相对路径，避免循环依赖"
+    },
+    "interfaceStandards": {
+      "definition": "使用OpenAPI规范定义REST接口",
+      "versioning": "在URL中包含版本号，例：/api/v1/users",
+      "documentation": "每个接口必须有详细的文档，包括参数、响应和错误码",
+      "examples": [
+        "/api/v1/users",
+        "/api/v1/immigration-assessment"
+      ]
+    },
+    "apiConventions": {
+      "requestFormat": "使用JSON格式",
+      "responseFormat": "使用JSON格式，包含status和data字段",
+      "statusCodes": "遵循HTTP状态码规范，例：200, 404, 500",
+      "pagination": "使用limit和offset参数进行分页",
+      "filtering": "使用查询参数进行过滤和排序，例：?sort=asc&filter=active"
+    },
+    "errorHandling": {
+      "strategy": "使用集中式错误处理机制，捕获并记录所有未处理异常",
+      "loggingLevel": "使用INFO, WARN, ERROR级别记录日志",
+      "exceptionHierarchy": "定义基础异常类，所有自定义异常继承自该类",
+      "userFeedback": "提供用户友好的错误信息，不暴露内部细节"
+    },
+    "communicationProtocols": {
+      "internalCommunication": "使用REST API和消息队列（如AWS SQS）",
+      "externalCommunication": "使用HTTPS和REST API",
+      "messageFormats": "使用JSON格式",
+      "synchronization": "使用事件驱动机制进行服务间同步"
+    },
+    "security": {
+      "authentication": "使用OAuth 2.0进行用户认证",
+      "authorization": "基于角色的访问控制（RBAC）",
+      "dataProtection": "使用AES加密存储敏感数据",
+      "inputValidation": "在所有输入点进行严格的输入验证"
+    },
+    "performance": {
+      "responseTimes": "API响应时间不超过200ms",
+      "throughput": "支持每秒1000个请求的吞吐量",
+      "scalability": "使用AWS Lambda自动扩展",
+      "resourceUsage": "每个Lambda函数内存使用不超过512MB"
+    },
+    "testingStrategy": {
+      "unitTesting": "每个模块必须有单元测试，覆盖核心逻辑",
+      "integrationTesting": "使用Postman或类似工具进行API集成测试",
+      "coverageRequirements": "代码覆盖率不低于80%",
+      "testingTools": "推荐使用Jest和Mocha进行测试"
+    },
+    "documentation": {
+      "codeComments": "使用JSDoc格式进行代码注释",
+      "apiDocumentation": "使用Swagger生成API文档",
+      "architectureDocuments": "使用UML图描述系统架构",
+      "changeLog": "使用标准的CHANGELOG.md格式记录变更"
+    },
+    "architectureLayers": {
+      "layerDefinition": "分为应用层、领域层和基础设施层",
+      "dependencyRules": "应用层可以依赖领域层和基础设施层，领域层不能依赖应用层",
+      "circularDependencyPrevention": "使用依赖注入和接口隔离避免循环依赖",
+      "layerResponsibilities": "应用层负责用户交互，领域层负责业务逻辑，基础设施层负责数据存储和外部服务集成"
+    }
+  },
+  "versionHistory": [
+    {
+      "version": "1.0",
+      "date": "自动生成",
+      "description": "初始版本"
+    }
+  ]
+}

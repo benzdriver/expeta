@@ -1,3 +1,4 @@
+from common import print_log
 """
 统一prompt模板库的使用示例
 
@@ -18,13 +19,13 @@ from prompt_templates import (
 
 def example_clarifier():
     """展示如何在clarifier中使用统一模板"""
-    print("===== Clarifier Prompt 示例 =====")
+    print_log("===== Clarifier Prompt 示例 =====")
     prompt = get_clarifier_prompt(1, 5)  # 第1部分，共5部分
     print(prompt[:300] + "...\n")  # 打印前300个字符
 
 def example_validator():
     """展示如何在validator中使用统一模板"""
-    print("===== Validator Prompt 示例 =====")
+    print_log("===== Validator Prompt 示例 =====")
     # 模拟边界分析数据
     boundary_analysis = {
         "merge_suggestions": [
@@ -39,7 +40,7 @@ def example_validator():
 
 def example_fixer():
     """展示如何在fixer中使用统一模板"""
-    print("===== Fixer Prompt 示例 =====")
+    print_log("===== Fixer Prompt 示例 =====")
     # 模拟模块摘要和问题
     original_summary = {
         "module_name": "UserController",
@@ -57,7 +58,7 @@ def example_fixer():
 
 def example_generator():
     """展示如何在generator中使用统一模板"""
-    print("===== Generator Prompt 示例 =====")
+    print_log("===== Generator Prompt 示例 =====")
     # 模拟模块摘要
     module_summary = {
         "module_name": "UserService",
@@ -74,13 +75,13 @@ def example_generator():
 
 def example_missing_module():
     """展示如何生成缺失模块的摘要提示"""
-    print("===== 缺失模块摘要 Prompt 示例 =====")
+    print_log("===== 缺失模块摘要 Prompt 示例 =====")
     prompt = get_missing_module_summary_prompt("UserRepository")
     print(prompt[:300] + "...\n")  # 打印前300个字符
 
 def example_layer_inference():
     """展示如何根据模块名推断层级"""
-    print("===== 层级推断示例 =====")
+    print_log("===== 层级推断示例 =====")
     modules = [
         "UserController", 
         "AuthService", 
@@ -92,11 +93,11 @@ def example_layer_inference():
     
     for module in modules:
         layer_info = infer_module_layer(module)
-        print(f"{module}: {layer_info['layer']} 层, API格式: {layer_info['expected_api_format']}, 路径: {layer_info['target_path']}")
+        print_log(f"{module}: {layer_info['layer']} 层, API格式: {layer_info['expected_api_format']}, 路径: {layer_info['target_path']}")
 
 if __name__ == "__main__":
     # 打印架构约定
-    print("===== 架构约定 =====")
+    print_log("===== 架构约定 =====")
     conventions = get_architecture_conventions()
     print(conventions[:300] + "...\n")  # 打印前300个字符
     
