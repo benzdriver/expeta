@@ -14,11 +14,22 @@ class LlamaIndexClient:
         self.qdrant_host = os.getenv("QDRANT_HOST", "localhost")
         self.qdrant_port = int(os.getenv("QDRANT_PORT", 6333))
         self.qdrant_api_key = os.getenv("QDRANT_API_KEY")
+        # Determine whether to use HTTPS. Local Qdrant instances typically run
+        # over plain HTTP on port 6333.  The previous implementation always
+        # forced HTTPS which caused connection errors when talking to a local
+        # instance.  We enable HTTPS only when explicitly configured or when
+        # connecting to the default HTTPS port (443).
+        use_https = os.getenv("QDRANT_HTTPS")
+        if use_https is not None:
+            use_https = use_https.lower() in {"1", "true", "yes"}
+        else:
+            use_https = self.qdrant_port == 443
+
         self.qdrant_client = QdrantClient(
             host=self.qdrant_host,
             port=self.qdrant_port,
             api_key=self.qdrant_api_key,
-            https=True
+            https=use_https
         )
         self.vector_store = QdrantVectorStore(
             client=self.qdrant_client,
