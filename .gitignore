@@ -130,4 +130,20 @@ venv.bak/
 .pytype/
 
 # Cython debug symbols
-cython_debug/ 
+cython_debug/
+
+# Generated output files
+data/output/*
+!data/output/.gitkeep
+
+# Qdrant vector database
+data/qdrant/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Generated test coverage
+clarifier/tests/htmlcov/
+*.coverage 

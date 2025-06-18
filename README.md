@@ -2,6 +2,13 @@
 
 Expeta是一个软件架构分析系统，使用LLM（大语言模型）对文档进行分析，生成架构决策和详细设计。
 
+## 📚 项目文档
+
+详细文档已整理在 `docs/` 目录下：
+- **[完整文档索引](docs/README.md)** - 所有文档的分类索引
+- **[项目概述](docs/architecture/PROJECT_SUMMARY.md)** - 详细的项目介绍和功能说明
+- **[改进追踪](docs/development/IMPROVEMENT_TRACKING.md)** - 当前开发状态和计划
+
 ## 设置
 
 1. 克隆仓库
